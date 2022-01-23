@@ -20,4 +20,8 @@ export default class Sprite{
         this.y = this.y + this.vy*dt;
          
     }
+
+    colidirCom(outro){
+        return !(this.x > outro.x + outro.w || this.x + this.w < outro.x || this.y > outro.y + outro.h || this.y + this.h < outro.y);
+    }
 }

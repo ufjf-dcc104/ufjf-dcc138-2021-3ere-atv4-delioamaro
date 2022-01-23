@@ -46,4 +46,20 @@ export default class Cena{
         this.t0 = null;
         this.dt = 0;
     }
+
+    checarColisao(){
+        for (let a = 0; a < this.sprites.length - 1; a++) {
+            const spriteA = this.sprites[a];
+            for (let b = 0; b < this.sprites.length; b++) {
+                const spriteB = this.sprites[b];
+                if(spriteA.colidirCom(spriteB)){
+                    this.quandoColidir(spriteA, spriteB);
+                }
+            }
+        }
+    }
+
+    quandoColidir(a, b){
+        
+    }
 }
