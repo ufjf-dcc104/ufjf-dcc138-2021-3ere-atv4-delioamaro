@@ -7,11 +7,13 @@ export default class Cena{
         this.t0 = 0;
         this.dt = 0;
         this.idAnim = null;
+        this.mapa = null;
     }
 
     desenhar(){
-        this.ctx.fillStyle = "grey";
+        this.ctx.fillStyle = "lightblue";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        this.mapa?.desenhar(this.ctx);
         for (let s = 0; s < this.sprites.length; s++){
             const sprite = this.sprites[s];
             sprite.desenhar(this.ctx);
@@ -60,6 +62,11 @@ export default class Cena{
     }
 
     quandoColidir(a, b){
-        
+
+    }
+
+    configurarMapa(mapa){
+        this.mapa = mapa;
+        this.mapa.cena = this;
     }
 }
