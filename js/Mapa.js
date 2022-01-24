@@ -37,4 +37,15 @@ export default class Mapa{
             }
         }
     }
+
+    carregarMapa(modelo){
+        this.LINHAS = modelo.lenght;
+        this.COLUNAS - modelo[0]?.lenght ?? 0;
+        this.tile = [];
+        for (let l = 0; l < this.LINHAS; l++) {
+            for (let c = 0; c < this.COLUNAS; c++) {
+                this.tiles[l][c] = modelo[l][c];
+            }
+        }
+    }
 }
